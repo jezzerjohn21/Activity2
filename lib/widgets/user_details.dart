@@ -34,6 +34,7 @@ class _UserDetailsState extends State<UserDetails> {
                   children: [
                    CircleAvatar(
                       radius: 60,
+                      backgroundColor:const Color.fromARGB(141, 2, 141, 255),
                       child: Text(
                           widget.user.name[0].toUpperCase(),
                           style:const TextStyle(
@@ -99,15 +100,14 @@ class _UserDetailsState extends State<UserDetails> {
                           value: widget.user.address.city,
                           icon: Icons.location_on),
                       Container(
-                        padding: const EdgeInsets.only(left: 30),
+                        padding: const EdgeInsets.only(left:25, right: 3),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Flexible(
                               child: Text(
-                                  'ST.:${widget.user.address.street}, ${widget.user.address.city}',  maxLines: 2,),
+                                  ': ${widget.user.address.street}, ${widget.user.address.suite}, ${widget.user.address.city}, ${widget.user.address.zipcode} Coordinates: ${widget.user.address.geo.lat}, ${widget.user.address.geo.lng}',  maxLines: 3,),
                             ),
-                            Text('Zip:${widget.user.address.zipcode}'),
                           ],
                         ),
                       ),
@@ -126,6 +126,18 @@ class _UserDetailsState extends State<UserDetails> {
                           label: 'Company',
                           value: widget.user.company.name,
                           icon: Icons.business),
+                            Container(
+                        padding: const EdgeInsets.only(left:30, right: 3),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Flexible(
+                              child: Text(
+                                  'BS: ${widget.user.company.bs}',  maxLines: 3,),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -151,6 +163,8 @@ class UserInfoItem extends StatefulWidget {
 }
 
 class _UserInfoItemState extends State<UserInfoItem> {
+
+
   void _openAddExpenseOverlay() {
     //add icon overlay funtion
     showModalBottomSheet(
