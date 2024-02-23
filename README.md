@@ -4,13 +4,5 @@ Rest API and code Cleaning activity.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This flutter project is a list of users and each user details.
+![Example Image](https://scontent.fceb5-1.fna.fbcdn.net/v/t1.15752-9/421751211_1114567723212375_3741305184660795785_n.png?_nc_cat=103&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeE_vIv1ADtuMBIKyWaXiJZ2J99DFV92Wbsn30MVX3ZZuxlOfwRy1BgvkHUjbMH7Odh76VEy6ROpPgtzwYhjQ_jN&_nc_ohc=u7TZCKtTCJsAX80ap_w&_nc_ht=scontent.fceb5-1.fna&oh=03_AdR8SIJDGk728JrYIfKDaJAhhWioi5D6_lukJdv_gltwSA&oe=65FFBBB5)
