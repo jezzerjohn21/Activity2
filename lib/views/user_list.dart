@@ -1,4 +1,4 @@
-import 'package:activity2/widgets/user_details.dart';
+import 'package:activity2/views/user_details.dart';
 import 'package:flutter/material.dart';
 import 'package:activity2/models/user.dart';
 
@@ -27,31 +27,24 @@ class UserItemList extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8)),
               contentPadding:
                   const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              tileColor:const Color.fromARGB(0, 151, 140, 140),
               leading: const Icon(
                 Icons.person,
                 size: 30,
-                color:Color.fromARGB(255, 2, 146, 235),
               ),
-              title: Text(post.name,
-                  style: const TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.normal)),
+              title: Text(post.name),
               trailing: Container(
                 padding: const EdgeInsets.all(0),
                 margin: const EdgeInsets.symmetric(vertical: 0),
                 height: 40,
                 width: 40,
                 decoration: BoxDecoration(
-                  color:const Color.fromARGB(255, 2, 146, 235),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: const Icon(
-                Icons.keyboard_arrow_right,
-                size: 30,
-                color:Color.fromARGB(255, 255, 255, 255),
-              ),
+                  Icons.keyboard_arrow_right,
+                  size: 30,
+                 
+                ),
               ),
             ),
           );
