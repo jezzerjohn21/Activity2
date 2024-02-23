@@ -1,5 +1,5 @@
 import 'package:activity2/models/user.dart';
-import 'package:activity2/widgets/user_item_list.dart';
+import 'package:activity2/views/user_list.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<List<User>> postsFuture = getUsers();
 
   static Future<List<User>> getUsers() async {
-    var url = Uri.parse("https://jsonplaceholder.typicode.com/users");
+    var url = Uri.parse("http://10.0.2.2:3001/faker");
     final response =
         await http.get(url, headers: {"Content-Type": "application/json"});
     final List body = json.decode(response.body);
