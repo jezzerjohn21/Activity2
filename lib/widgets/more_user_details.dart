@@ -9,7 +9,7 @@ class MoreUserDetails extends StatelessWidget {
       child: Container(
         height: MediaQuery.of(context).size.height *
             0.8, // Adjust the fraction as needed
-        padding: EdgeInsets.all(16),
+        padding:const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

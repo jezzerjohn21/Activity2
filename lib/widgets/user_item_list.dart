@@ -47,12 +47,11 @@ class UserItemList extends StatelessWidget {
                   color:const Color.fromARGB(255, 2, 146, 235),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: IconButton(
-                  iconSize: 25,
-                  color: Colors.white,
-                  icon: const Icon(Icons.keyboard_arrow_right),
-                  onPressed: () {},
-                ),
+                child: const Icon(
+                Icons.keyboard_arrow_right,
+                size: 30,
+                color:Color.fromARGB(255, 255, 255, 255),
+              ),
               ),
             ),
           );

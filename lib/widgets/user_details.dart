@@ -27,13 +27,18 @@ class _UserDetailsState extends State<UserDetails> {
                 width: double.infinity,
                 height: 200,
                 decoration: BoxDecoration(
-                    color:const Color.fromARGB(17, 151, 140, 140),
+                    color: const Color.fromARGB(17, 151, 140, 140),
                     borderRadius: BorderRadius.circular(12)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    const CircleAvatar(
+                   CircleAvatar(
                       radius: 60,
+                      child: Text(
+                          widget.user.name[0].toUpperCase(),
+                          style:const TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -43,7 +48,19 @@ class _UserDetailsState extends State<UserDetails> {
                           style:const TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 20),
                         ),
-                        Text(widget.user.company.name),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            const Icon(
+                              Icons.business_outlined,
+                              size: 30,
+                              color: Color.fromARGB(255, 2, 146, 235),
+                            ),
+                            Text(widget.user.company.name),
+                          ],
+                        ),
+                       const SizedBox(height: 20,),
+                        Flexible(child: Text('"${widget.user.company.catchPhrase}"')),
                       ],
                     ),
                   ],
@@ -79,8 +96,21 @@ class _UserDetailsState extends State<UserDetails> {
                       const Divider(),
                       UserInfoItem(
                           label: 'Address',
-                          value:  widget.user.address.city,
+                          value: widget.user.address.city,
                           icon: Icons.location_on),
+                      Container(
+                        padding: const EdgeInsets.only(left: 30),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Flexible(
+                              child: Text(
+                                  'ST.:${widget.user.address.street}, ${widget.user.address.city}',  maxLines: 2,),
+                            ),
+                            Text('Zip:${widget.user.address.zipcode}'),
+                          ],
+                        ),
+                      ),
                       const Divider(),
                       UserInfoItem(
                           label: 'Phone',
@@ -113,19 +143,19 @@ class UserInfoItem extends StatefulWidget {
   final String value;
   final IconData icon;
 
- const UserInfoItem({super.key, this.label, required this.value, required this.icon});
+  const UserInfoItem(
+      {super.key, this.label, required this.value, required this.icon});
 
   @override
   State<UserInfoItem> createState() => _UserInfoItemState();
 }
 
 class _UserInfoItemState extends State<UserInfoItem> {
-
   void _openAddExpenseOverlay() {
     //add icon overlay funtion
     showModalBottomSheet(
       context: context,
-       isScrollControlled: true,
+      isScrollControlled: true,
       builder: (ctx) => const MoreUserDetails(),
     );
   }
@@ -154,18 +184,19 @@ class _UserInfoItemState extends State<UserInfoItem> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-              const  SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Text(
                   widget.value,
-                  style:const TextStyle(fontSize: 14),
+                  style: const TextStyle(fontSize: 14),
                 ),
               ],
             ),
           ),
           IconButton(
-              icon: const Icon(Icons.arrow_right_sharp), onPressed:(){
+              icon: const Icon(Icons.arrow_right_sharp),
+              onPressed: () {
                 _openAddExpenseOverlay();
-              } )
+              })
         ],
       ),
     );
