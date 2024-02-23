@@ -1,6 +1,7 @@
 import 'package:activity2/models/user.dart';
 import 'package:activity2/widgets/userinfoitem.dart';
 import 'package:flutter/material.dart';
+import 'package:textwrap/textwrap.dart';
 
 class UserDetails extends StatefulWidget {
   const UserDetails({super.key, required this.user});
@@ -11,6 +12,7 @@ class UserDetails extends StatefulWidget {
 }
 
 class _UserDetailsState extends State<UserDetails> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,9 +57,11 @@ class _UserDetailsState extends State<UserDetails> {
                         const SizedBox(
                           height: 20,
                         ),
-                        Flexible(
-                            child:
-                                Text('"${widget.user.company.catchPhrase}"')),
+                        Wrap(
+                            children:[
+                                Text('"${widget.user.company.catchPhrase}"', )
+                      ]),
+                              
                       ],
                     ),
                   ],
