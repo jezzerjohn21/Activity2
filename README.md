@@ -1,6 +1,6 @@
 # activity2
 
-A new Flutter project.
+Rest API and code Cleaning activity.
 
 ## Getting Started
 
