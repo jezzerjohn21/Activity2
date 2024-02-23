@@ -43,7 +43,6 @@ class UserItemList extends StatelessWidget {
                 child: const Icon(
                   Icons.keyboard_arrow_right,
                   size: 30,
-                 
                 ),
               ),
             ),
