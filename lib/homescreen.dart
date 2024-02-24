@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -16,7 +15,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<List<User>> postsFuture = getUsers();
 
   static Future<List<User>> getUsers() async {
-    var url = Uri.parse("http://10.0.2.2:3001/faker");
+    // var url = Uri.parse("https://jsonplaceholder.typicode.com/users");
+    var url = Uri.parse("http://10.0.2.2:3001/users");
+
     final response =
         await http.get(url, headers: {"Content-Type": "application/json"});
     final List body = json.decode(response.body);
@@ -42,4 +43,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-

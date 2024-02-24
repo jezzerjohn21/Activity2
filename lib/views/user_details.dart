@@ -1,7 +1,7 @@
 import 'package:activity2/models/user.dart';
+import 'package:activity2/views/todos.dart';
 import 'package:activity2/widgets/userinfoitem.dart';
 import 'package:flutter/material.dart';
-import 'package:textwrap/textwrap.dart';
 
 class UserDetails extends StatefulWidget {
   const UserDetails({super.key, required this.user});
@@ -12,7 +12,6 @@ class UserDetails extends StatefulWidget {
 }
 
 class _UserDetailsState extends State<UserDetails> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +27,6 @@ class _UserDetailsState extends State<UserDetails> {
                 alignment: Alignment.center,
                 width: double.infinity,
                 height: 200,
-            
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -40,6 +38,7 @@ class _UserDetailsState extends State<UserDetails> {
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           widget.user.name,
@@ -58,10 +57,12 @@ class _UserDetailsState extends State<UserDetails> {
                           height: 20,
                         ),
                         Wrap(
-                            children:[
-                                Text('"${widget.user.company.catchPhrase}"', )
-                      ]),
-                              
+                          children: [
+                            Text(
+                              ' ${widget.user.company.catchPhrase}',
+                            )
+                          ],
+                        ),
                       ],
                     ),
                   ],
@@ -137,6 +138,21 @@ class _UserDetailsState extends State<UserDetails> {
                         ],
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Center(
+                        child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: ((context) => const Todos()),
+                                ),
+                              );
+                            },
+                            child: const Text('Show todos')),
+                      ),
+                    )
                   ],
                 ),
               ),
