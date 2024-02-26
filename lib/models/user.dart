@@ -3,24 +3,24 @@ part 'package:activity2/models/company.dart';
 
 
 class User {
-  final int? id;
-  final String? name;
-  final String? username;
-  final String? email;
-  final Address? address;
-  final String? phone;
-  final String? website;
-  final Company? company;
+  final int id;
+  final String name;
+  final String username;
+  final String email;
+  final Address address;
+  final String phone;
+  final String website;
+  final Company company;
 
   User({
-       this.id,
-       this.name,
-       this.username,
-       this.email,
-       this.address,
-       this.phone,
-       this.website,
-       this.company,
+      required this.id,
+      required this.name,
+      required this.username,
+      required this.email,
+      required this.address,
+      required this.phone,
+      required this.website,
+      required this.company,
   });
 
   factory User.fromJson(Map<String, dynamic> json) {

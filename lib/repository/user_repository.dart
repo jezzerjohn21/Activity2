@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:activity2/models/user.dart';
 import 'package:http/http.dart' as http;
 
@@ -8,12 +9,15 @@ import 'package:http/http.dart' as http;
  
   UserRespository(this.client);
  
-  Future<User> fetchUser() async {
+  Future<List<User>> fetchUser() async {
     final response = await client
         .get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
+
+    final List body = json.decode(response.body);
+         
  
     if (response.statusCode == 200) {
-      return User();
+    return body.map((e) => User.fromJson(e)).toList();
     } else {
       throw Exception();
     }
