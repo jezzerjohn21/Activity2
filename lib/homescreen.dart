@@ -13,9 +13,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Future<List<User>> postsFuture = getUsers();
+  Future<List<User>> postsFuture = fetchUsers();
 
-  static Future<List<User>> getUsers() async {
+  static Future<List<User>> fetchUsers() async {
     var url = Uri.parse("http://10.0.2.2:3001/faker");
     final response =
         await http.get(url, headers: {"Content-Type": "application/json"});
