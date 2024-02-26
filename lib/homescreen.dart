@@ -12,12 +12,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Future<List<User>> postsFuture = getUsers();
+  Future<List<User>> postsFuture = fetchUsers();
+
 
   static Future<List<User>> getUsers() async {
     // var url = Uri.parse("https://jsonplaceholder.typicode.com/users");
     var url = Uri.parse("http://10.0.2.2:3001/users");
-
+    
     final response =
         await http.get(url, headers: {"Content-Type": "application/json"});
     final List body = json.decode(response.body);
