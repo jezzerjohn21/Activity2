@@ -42,11 +42,11 @@ class _TodoContentState extends State<TodoContent> {
     todos = getTodos();
   }
 
-  Future<List<Todo>> getTodos() async {
-    final response = await http.get(Uri.parse('http://10.0.2.2:3001/todos'),
-        headers: {"Content-Type": "application/json"});
-    final List<dynamic> todosAPI = jsonDecode(response.body);
-    return todosAPI.map((e) => Todo.fromJson(e)).toList();
+      Future<List<Todo>> getTodos() async {
+        final response = await http.get(Uri.parse('http://10.0.2.2:3001/todos'),
+            headers: {"Content-Type": "application/json"});
+        final List<dynamic> todosAPI = jsonDecode(response.body);
+        return todosAPI.map((e) => Todo.fromJson(e)).toList();
   }
 
   @override
